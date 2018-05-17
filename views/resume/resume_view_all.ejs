@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume - View All</title>
+</head>
+    <body>
+        <h1>Resume - View All</h1>
+        <br />
+        <a href="/resume/add">Add Resume</a>
+        <table border="1">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Resume Title</th>
+                <th>Actions</th>
+            </tr>
+            <% for(var i = 0; i < resume.length; i++) { %>
+                <tr>
+                    <td><%= resume[i].first_name %></td>
+                    <td><%= resume[i].last_name %></td>
+                    <td><%= resume[i].resume_name %></td>
+                    <td>
+                        <a href="/resume/edit/?resume_id=<%= resume[i].resume_id %>">Edit</a>
+                        <a href="/resume/delete/?resume_id=<%= resume[i].resume_id %>">Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skills - Edit</title>
+</head>
+<body>
+<h1>Edit Skill</h1>
+<form action="/skill/update" method="get">
+    <input
+            type="hidden"
+            id="skill_id"
+            name="skill_id"
+            value="<%= skill.skill_id %>"
+    />
+    Skill: <input
+            name="skill_name"
+            value="<%= skill.skill_name %>"
+    />
+    <br />
+    Description: <input
+            name="description"
+            value="<%= skill.description %>"
+    />
+    <br />
+    <input type="submit" />
+
+</form>
+</body>
+</html>

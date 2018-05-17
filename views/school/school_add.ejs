@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School - Add</title>
+</head>
+<body>
+<h1>Add New School</h1>
+<form action="/school/insert" method="get">
+    School Name: <input type= "text" name="school_name" />
+    <br />
+    Address:
+    <select name="address_id">
+        <%for (var i = 0; i < address.length; i++) { %>
+        <option id="<%= address[i].address_id %>" value="<%= address[i].address_id %>"><%= address[i].street + ", " + address[i].zip_code %></option>
+        <% } %>
+    </select>
+    <br />
+    <input type="submit" />
+
+</form>
+</body>
+</html>

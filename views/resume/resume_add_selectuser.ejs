@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume - Add</title>
+</head>
+<body>
+<h1>Add New Resume</h1>
+<form action="/resume/insert" method="get">
+    Resume Name: <input type= "text" name="resume_name" />
+    <br />
+    Account:
+    <select name="account_id">
+        <%for (var i = 0; i < account.length; i++) { %>
+        <option id="<%= account[i].account_id %>" value="<%= account[i].account_id %>"><%= account[i].first_name + ", " + account[i].last_name %></option>
+        <% } %>
+    </select>
+    <br />
+    <input type="submit" />
+
+</form>
+</body>
+</html>

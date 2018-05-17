@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account - View All</title>
+</head>
+    <body>
+        <h1>Accounts</h1>
+        <a href="/account/add"> Add Account</a>
+
+        <table border="1">
+            <tr>
+                <th>email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Actions</th>
+            </tr>
+            <% for(var i = 0; i < account.length; i++) {%>
+                <tr>
+                    <td><%= account[i].email %></td>
+                    <td><%= account[i].first_name %></td>
+                    <td><%= account[i].last_name %></td>
+                    <td>
+                        <a href="/account/edit/?account_id=<%= account[i].account_id %>">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

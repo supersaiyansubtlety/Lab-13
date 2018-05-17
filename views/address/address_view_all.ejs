@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address - View All</title>
+</head>
+    <body>
+        <h1>Address - View All</h1>
+        <br />
+        <a href="/address/add">Add Address</a>
+        <table border="1">
+            <tr>
+                <th>Street</th>
+                <th>Zip Code</th>
+                <th>Actions</th>
+            </tr>
+            <% for(var i = 0; i < address.length; i++) {%>
+                <tr>
+                    <td><%= address[i].street %></td>
+                    <td><%= address[i].zip_code %></td>
+                    <td>
+                        <a href="/address/edit/?address_id=<%= address[i].address_id %>">Edit</a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </body>
+</html>
