@@ -3,10 +3,35 @@
 <head>
     <title>Resume - View All</title>
 </head>
+<style>
+    div.notification {
+        width: 100%;
+        text-align: center;
+        padding: .2em;
+        color: SlateGray;
+    }
+
+    div.notification.success {
+        background-color: LightGreen;
+    }
+
+    div.notification.error {
+        background-color: LightCoral;
+    }
+</style>
     <body>
         <h1>Resume - View All</h1>
-        <br />
-        <a href="/resume/add">Add Resume</a>
+        <%
+        if (locals.noti)
+        {
+            var noti_text = "";
+            var type = "";
+            if (locals.noti === "deleted") {noti_text = "Success! Resume '" + locals.resume_name + "' deleted!"; type=" success"; }
+            else {noti_text = "Error! Resume not deleted!\nError message: " + locals.resume_name + ""; type=" error"; }
+        %>
+        <div class="notification<%= type %>" id="notification"><%= noti_text %></div>
+        <% } %>
+        <a href="/resume/add/selectuser">Add Resume</a>
         <table border="1">
             <tr>
                 <th>First Name</th>
@@ -20,7 +45,7 @@
                     <td><%= resume[i].last_name %></td>
                     <td><%= resume[i].resume_name %></td>
                     <td>
-                        <a href="/resume/edit/?resume_id=<%= resume[i].resume_id %>">Edit</a>
+                        <a href="/resume/edit/?resume_id=<%= resume[i].resume_id %>&noti=">Edit</a>
                         <a href="/resume/delete/?resume_id=<%= resume[i].resume_id %>">Delete</a>
                     </td>
                 </tr>

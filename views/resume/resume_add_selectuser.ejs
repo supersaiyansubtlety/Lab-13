@@ -4,15 +4,15 @@
     <title>Resume - Add</title>
 </head>
 <body>
-<h1>Add New Resume</h1>
-<form action="/resume/insert" method="get">
-    Resume Name: <input type= "text" name="resume_name" />
-    <br />
-    Account:
+<h1>Resume User</h1>
+<a href="/resume/all">&#8592 Return to all Resumes</a>
+<form action="/resume/add/detail" method="get">
+    Select account of new resume:
     <select name="account_id">
         <%for (var i = 0; i < account.length; i++) { %>
-        <option id="<%= account[i].account_id %>" value="<%= account[i].account_id %>"><%= account[i].first_name + ", " + account[i].last_name %></option>
+        <option id="<%= account[i].account_id %>" value="<%= account[i].account_id %>"><%= account[i].first_name + " " + account[i].last_name %></option>
         <% } %>
+
     </select>
     <br />
     <input type="submit" />

@@ -21,7 +21,8 @@ exports.insert = function(params, callback) {
   var queryData = [params.company_name];
 
   connection.query(query, queryData, function(err, result) {
-      if(err || params.address_id == undefined) {
+      if(err || params.address_id === undefined) {
+          console.log("ERROR:");
           console.log(err);
           callback(err, result);
       } else {
@@ -91,4 +92,22 @@ exports.update = function(params, callback) {
             callback(err, result);
         });
     });
+};
+
+exports.delete = function (params, callback) {
+    exports.getinfo(params.company_id, function (err, result) {
+        if (err) {
+            console.log("ERROR:");
+            console.log(err);
+        } else {
+            var company_name = result[0][0].company_name;
+            var query = "DELETE FROM company WHERE company_id = ?";
+            var queryData = [params.company_id];
+
+            connection.query(query, queryData, function(err, result){
+                callback(err, company_name);
+            });
+        }
+    });
+
 };

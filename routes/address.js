@@ -13,7 +13,11 @@ router.get('/all', function(req, res) {
         }
         else
         {
-            res.render('address/address_view_all', {address: result[0]});
+            res.render('address/address_view_all',
+            {   address: result[0],
+                noti: req.query.noti,
+                street: req.query.street
+            });
         }
     });
 });
@@ -28,13 +32,13 @@ router.get('/insert', function(req, res) {
             console.log(err);
             res.send(err);
         } else {
-            res.redirect(302, '/address/all');
+            res.redirect(302, '/address/all/?address_id=' + result + '&noti=added&street=' + req.query.street);
         }
     });
 });
 
 router.get('/edit', function(req, res){
-    address_dal.getinfo(req.query, function (err, result) {
+    address_dal.getinfo(req.query.address_id, function (err, result) {
         if (err) {
             console.log(err);
             res.send(err);
@@ -51,7 +55,20 @@ router.get('/update', function(req, res){
             console.log(err);
             res.send(err);
         } else {
-            res.redirect(302, '/address/all');
+            res.redirect(302, '/address/all/?noti=updated&street=' + req.query.street);
+        }
+    });
+
+});
+
+router.get('/delete', function(req, res){
+    address_dal.delete(req.query, function (err, result) {
+        if (err) {
+            console.log("ERROR:");
+            console.log(err);
+            res.redirect(500, '/address/all/?noti=err&error=' + err);
+        } else {
+            res.redirect(302, '/address/all/?noti=deleted&street=' + result);
         }
     });
 

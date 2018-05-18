@@ -11,8 +11,12 @@ router.get('/all', function(req, res, next) {
             console.log(err);
             res.send(err);
         } else {
-            console.log(result);
-            res.render('account/account_view_all', {account: result});
+            res.render('account/account_view_all',
+            {
+                account: result,
+                noti: req.query.noti,
+                email: req.query.email
+            });
         }
     })
 });
@@ -27,7 +31,7 @@ router.get('/insert', function(req, res) {
             console.log(err);
             res.send(err);
         } else {
-            res.redirect(302, '/account/all');
+            res.redirect(302, '/account/all/?account_id=' + result + '&noti=added&email=' + req.query.email);
         }
     });
 });
@@ -45,9 +49,23 @@ router.get('/edit', function(req, res){
 
 router.get('/update', function(req, res) {
     account_dal.update(req.query, function(err, result){
+        console.log(result);
         if (err) {res.send(err); }
-        else {res.redirect(302, '/account/all'); }
+        else {res.redirect(302, '/account/all/?noti=updated&email=' + req.query.email); }
     });
+});
+
+router.get('/delete', function(req, res){
+    account_dal.delete(req.query, function (err, result) {
+        if (err) {
+            console.log("ERROR:");
+            console.log(err);
+            res.redirect(500, '/account/all/?noti=err&error=' + err);
+        } else {
+            res.redirect(302, '/account/all/?noti=deleted&email=' + result);
+        }
+    });
+
 });
 
 module.exports = router;

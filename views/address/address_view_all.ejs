@@ -3,25 +3,55 @@
 <head>
     <title>Address - View All</title>
 </head>
-    <body>
-        <h1>Address - View All</h1>
-        <br />
-        <a href="/address/add">Add Address</a>
-        <table border="1">
+<style>
+    div.notification {
+        width: 100%;
+        text-align: center;
+        padding: .2em;
+        color: SlateGray;
+    }
+
+    div.notification.success {
+        background-color: LightGreen;
+    }
+
+    div.notification.error {
+        background-color: LightCoral;
+    }
+</style>
+<body>
+    <h1>Addresses</h1>
+    <%
+    if (locals.noti)
+    {
+        var noti_text = "Success! Address '" + locals.street + "' " + locals.noti + "!";
+        var type = "";
+        if (locals.noti === "err") {
+            noti_text = "Error! Address not deleted!\nError message: " + locals.street + "";
+            type=" error";
+        } else {
+            type=" success";
+        }
+    %>
+    <div class="notification<%= type %>" id="notification"><%= noti_text %></div>
+    <% } %>
+    <a href="/address/add">Add Address</a>
+    <table border="1">
+        <tr>
+            <th>Street</th>
+            <th>Zip Code</th>
+            <th>Actions</th>
+        </tr>
+        <% for(var i = 0; i < address.length; i++) {%>
             <tr>
-                <th>Street</th>
-                <th>Zip Code</th>
-                <th>Actions</th>
+                <td><%= address[i].street %></td>
+                <td><%= address[i].zip_code %></td>
+                <td>
+                    <a href="/address/edit/?address_id=<%= address[i].address_id %>">Edit</a>
+                    <a href="/address/delete/?address_id=<%= address[i].address_id %>">Delete</a>
+                </td>
             </tr>
-            <% for(var i = 0; i < address.length; i++) {%>
-                <tr>
-                    <td><%= address[i].street %></td>
-                    <td><%= address[i].zip_code %></td>
-                    <td>
-                        <a href="/address/edit/?address_id=<%= address[i].address_id %>">Edit</a>
-                    </td>
-                </tr>
-            <% } %>
-        </table>
-    </body>
+        <% } %>
+    </table>
+</body>
 </html>

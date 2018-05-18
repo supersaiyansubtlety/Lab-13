@@ -1,45 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resume - Add</title>
+    <title>Resume - Edit</title>
 </head>
+<style>
+    div.notification {
+        background-color: LightGreen;
+        color: SlateGray;
+        width: 100%;
+        text-align: center;
+        padding: .2em;
+    }
+</style>
 <body>
-<h1>Add New Resume</h1>
-<a href="/resume/all">&#8606 Return to all Resumes</a>
+<h1>Edit Resume</h1>
+
+<%
+    if (locals.noti)
+    {
+        var noti_text = "Success! Resume '" + resume.resume_name + "' ";
+        if (locals.noti === "added") {noti_text += "added!"; }
+        else {noti_text += "updated!"; }
+        %>
+        <div class="notification" id="notification"><%= noti_text %></div>
+<%  } %>
+<a href="/resume/all/?noti=" id="ret_link">&#8606 Return to all Resumes</a>
 <br />
-<a href="/resume/add/selectuser">&#8592 Choose different User</a>
-<form action="/resume/insert" method="get">
-    <input type="hidden" name="account_id" id="account_id" value="<%= account_id %>">
-    <% console.log(account_id);
-    console.log(account_id); %>
-    Resume Name: <input type= "text" name="resume_name" />
+<form action="/resume/update" method="get">
+    <input type="hidden" name="resume_id" id="resume_id" value="<%= resume.resume_id %>">
+    Resume Name: <input type= "text" name="resume_name" value="<%= resume.resume_name %>"/>
     <br />
+
     Companies
     <br />
-    <%for (var i = 0; i < company.length; i++) { %>
-        <input type="checkbox" name="company_id" value="<%= company[i].company_id %>" >
-            <%= company[i].company_name %>
-        </input>
-        <br />
-    <% } %>
+    <%  var checked = "";
+        for (var i = 0; i < all_company.length; i++) {
+            for (var j = 0; j < pre_company.length; j++){
+                if(all_company[i].company_id === pre_company[j].company_id){
+                    checked = "checked";
+                }
+            } %>
+            <input type="checkbox" name="company_id" value="<%= all_company[i].company_id %>" <%= checked %>>
+                <%= all_company[i].company_name %>
+            </input>
+            <% checked = ""; %>
+            <br />
+    <%  } %>
     <br />
+
     Schools
     <br />
-    <%for (var i = 0; i < school.length; i++) { %>
-        <input type="checkbox" name="school_id" value="<%= school[i].school_id %>">
-            <%= school[i].school_name %>
-        </input>
-        <br />
-    <% } %>
+    <%  var checked = "";
+    for (var i = 0; i < all_school.length; i++) {
+        for (var j = 0; j < pre_school.length; j++){
+            if(all_school[i].school_id === pre_school[j].school_id){
+                checked = "checked";
+            }
+        } %>
+    <input type="checkbox" name="school_id" value="<%= all_school[i].school_id %>" <%= checked %>>
+    <%= all_school[i].school_name %>
+    </input>
+    <% checked = ""; %>
     <br />
+    <%  } %>
+    <br />
+
     Skills
     <br />
-    <%for (var i = 0; i < skill.length; i++) { %>
-        <input type="checkbox" name="skill_id" value="<%= skill[i].skill_id %>">
-            <%= skill[i].skill_name + " | " + skill[i].description %>
-        </input>
-        <br />
-    <% } %>
+    <%  var checked = "";
+    for (var i = 0; i < all_skill.length; i++) {
+        for (var j = 0; j < pre_skill.length; j++){
+            if(all_skill[i].skill_id === pre_skill[j].skill_id){
+                checked = "checked";
+            }
+        } %>
+    <input type="checkbox" name="skill_id" value="<%= all_skill[i].skill_id %>" <%= checked %>>
+    <%= all_skill[i].skill_name + " | " + all_skill[i].description %>
+    </input>
+    <% checked = ""; %>
+    <br />
+    <%  } %>
     <input type="submit" />
 
 </form>

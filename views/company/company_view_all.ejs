@@ -3,29 +3,58 @@
 <head>
     <title>Company - View All</title>
 </head>
-    <body>
-        <h1>Companies</h1>
-        <a href="/company/add">Add New Company</a>
-        <br />
-        <table border="1">
+<style>
+    div.notification {
+        width: 100%;
+        text-align: center;
+        padding: .2em;
+        color: SlateGray;
+    }
+
+    div.notification.success {
+        background-color: LightGreen;
+    }
+
+    div.notification.error {
+        background-color: LightCoral;
+    }
+</style>
+<body>
+<h1>Companies</h1>
+<%
+    if (locals.noti)
+    {
+        var noti_text = "Success! Company '" + locals.company_name + "' " + locals.noti + "!";
+        var type = "";
+        if (locals.noti === "err") {
+            noti_text = "Error! Company not deleted!\nError message: " + locals.company_name + "";
+            type=" error";
+        } else {
+            type=" success";
+        }
+    %>
+    <div class="notification<%= type %>" id="notification"><%= noti_text %></div>
+    <% } %>
+    <a href="/company/add">Add New Company</a>
+    <br />
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        <% for(var i = 0; i < companies.length; i++) { %>
             <tr>
-                <th>Name</th>
-                <th>Actions</th>
+                <td>
+                    <a href="/company/?company_id=<%= companies[i].company_id %>">
+                        <%= companies[i].company_name %>
+                    </a>
+                </td>
+                <td>
+                    <a href="/company/edit/?company_id=<%= companies[i].company_id %>">Edit</a>
+                    <a href="/company/delete/?company_id=<%= companies[i].company_id %>">Delete</a>
+                </td>
             </tr>
-            <% for(var i = 0; i < companies.length; i++) { %>
-                <tr>
-                    <td>
-                        <a href="/company/?company_id=<%= companies[i].company_id %>">
-                            <%= companies[i].company_name %>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="/company/edit/?company_id=<%= companies[i].company_id %>">
-                            Edit
-                        </a>
-                    </td>
-                </tr>
-            <% } %>
-        </table>
-    </body>
+        <% } %>
+    </table>
+</body>
 </html>

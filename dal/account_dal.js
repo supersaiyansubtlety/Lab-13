@@ -21,7 +21,7 @@ exports.insert = function(params, callback) {
     var queryData = [params.email, params.first_name, params.last_name];
 
     connection.query(query, queryData, function(err, result) {
-        callback(err, result);
+        callback(err, result.insertId);
     });
 };
 
@@ -38,6 +38,24 @@ exports.update = function(params, callback) {
     var query = 'UPDATE account SET email = ?, first_name = ?, last_name = ? WHERE account_id = ?';
     var queryData = [params.email, params.first_name, params.last_name, params.account_id];
     connection.query(query, queryData, function(err, result) {
-        callback(err,result);
+        callback(err,result, params.email);
     });
 }
+
+exports.delete = function (params, callback) {
+    exports.getinfo(params.account_id, function (err, result) {
+        if (err) {
+            console.log("ERROR:");
+            console.log(err);
+        } else {
+            var email = result[0][0].email;
+            var query = "DELETE FROM account WHERE account_id = ?";
+            var queryData = [params.account_id];
+
+            connection.query(query, queryData, function(err, result){
+                callback(err, email);
+            });
+        }
+    });
+
+};

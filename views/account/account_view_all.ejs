@@ -3,29 +3,58 @@
 <head>
     <title>Account - View All</title>
 </head>
-    <body>
-        <h1>Accounts</h1>
-        <a href="/account/add"> Add Account</a>
+<style>
+    div.notification {
+        width: 100%;
+        text-align: center;
+        padding: .2em;
+        color: SlateGray;
+    }
 
-        <table border="1">
+    div.notification.success {
+        background-color: LightGreen;
+    }
+
+    div.notification.error {
+        background-color: LightCoral;
+    }
+</style>
+<body>
+    <h1>Accounts</h1>
+    <%
+    if (locals.noti)
+    {
+        var noti_text = "Success! Account '" + locals.email + "' " + locals.noti + "!";
+        var type = "";
+        if (locals.noti === "err") {
+            noti_text = "Error! Account not deleted!\nError message: " + locals.email + "";
+            type=" error";
+        } else {
+            type=" success";
+        }
+    %>
+    <div class="notification<%= type %>" id="notification"><%= noti_text %></div>
+    <% } %>
+    <a href="/account/add"> Add Account</a>
+
+    <table border="1">
+        <tr>
+            <th>email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Actions</th>
+        </tr>
+        <% for(var i = 0; i < account.length; i++) {%>
             <tr>
-                <th>email</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Actions</th>
+                <td><%= account[i].email %></td>
+                <td><%= account[i].first_name %></td>
+                <td><%= account[i].last_name %></td>
+                <td>
+                    <a href="/account/edit/?account_id=<%= account[i].account_id %>">Edit</a>
+                    <a href="/account/delete/?account_id=<%= account[i].account_id %>">Delete</a>
+                </td>
             </tr>
-            <% for(var i = 0; i < account.length; i++) {%>
-                <tr>
-                    <td><%= account[i].email %></td>
-                    <td><%= account[i].first_name %></td>
-                    <td><%= account[i].last_name %></td>
-                    <td>
-                        <a href="/account/edit/?account_id=<%= account[i].account_id %>">
-                            Edit
-                        </a>
-                    </td>
-                </tr>
-            <% } %>
-        </table>
-    </body>
+        <% } %>
+    </table>
+</body>
 </html>

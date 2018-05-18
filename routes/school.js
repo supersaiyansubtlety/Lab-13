@@ -14,8 +14,12 @@ router.get('/all', function(req, res) {
         }
         else
         {
-            console.log(result);
-            res.render('school/school_view_all', {school: result});
+            res.render('school/school_view_all',
+                {
+                    school: result,
+                    noti: req.query.noti,
+                    school_name: req.query.school_name
+                });
         }
     });
 });
@@ -34,13 +38,13 @@ router.get('/insert', function(req, res) {
             res.send(err);
         } else {
             console.log(result);
-            res.redirect(302, '/school/all');
+            res.redirect(302, '/school/all/?school_id=' + result + '&noti=added&school_name=' + req.query.school_name);
         }
     });
 });
 
 router.get('/edit', function(req, res){
-    school_dal.getinfo(req.query, function (err, result) {
+    school_dal.getinfo(req.query.school_id, function (err, result) {
         if (err) {
             console.log(err);
             res.send(err);
@@ -57,14 +61,23 @@ router.get('/update', function(req, res){
         if (err) {
             console.log(err);
             res.send(err);
-        } else {
-            console.log(result);
-            res.redirect(302, '/school/all');
+        } else {res.redirect(302, '/school/all/?noti=updated&school_name=' + req.query.school_name);
         }
     });
 
 });
 
+router.get('/delete', function(req, res){
+    school_dal.delete(req.query, function (err, result) {
+        if (err) {
+            console.log("ERROR:");
+            console.log(err);
+            res.redirect(500, '/school/all/?noti=err&error=' + err);
+        } else {
+            res.redirect(302, '/school/all/?noti=deleted&school_name=' + result);
+        }
+    });
 
+});
 
 module.exports = router;

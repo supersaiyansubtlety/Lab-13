@@ -11,8 +11,12 @@ router.get('/all', function(req, res, next) {
             console.log(err);
             res.send(err);
         } else {
-            console.log(result);
-            res.render('skill/skill_view_all', {skill: result});
+            res.render('skill/skill_view_all',
+                {
+                    skill: result,
+                    noti: req.query.noti,
+                    skill_name: req.query.skill_name
+                });
         }
     })
 });
@@ -27,13 +31,13 @@ router.get('/insert', function(req, res) {
             console.log(err);
             res.send(err);
         } else {
-            res.redirect(302, '/skill/all');
+            res.redirect(302, '/skill/all/?skill_id=' + result + '&noti=added&skill_name=' + req.query.skill_name);
         }
     });
 });
 
 router.get('/edit', function(req, res){
-    skill_dal.getinfo(req.query, function (err, result) {
+    skill_dal.getinfo(req.query.skill_id, function (err, result) {
         if (err) {res.send(err); }
         else {
             console.log("skill_id:");
@@ -50,8 +54,21 @@ router.get('/edit', function(req, res){
 router.get('/update', function(req, res){
     skill_dal.update(req.query, function(err, result) {
         if (err) {res.send(err); }
-        else {res.redirect(302, '/skill/all'); }
+        else {res.redirect(302, '/skill/all/?noti=updated&skill_name=' + req.query.skill_name); }
     });
+});
+
+router.get('/delete', function(req, res){
+    skill_dal.delete(req.query, function (err, result) {
+        if (err) {
+            console.log("ERROR:");
+            console.log(err);
+            res.redirect(500, '/skill/all/?noti=err&error=' + err);
+        } else {
+            res.redirect(302, '/skill/all/?noti=deleted&skill_name=' + result);
+        }
+    });
+
 });
 
 module.exports = router;

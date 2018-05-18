@@ -3,8 +3,17 @@
     <head>
         <title>Company - Edit</title>
     </head>
+    <style>
+        div.notification {
+            background-color: LightGreen;
+            color: SlateGray;
+            width: 100%;
+            text-align: center;
+            padding: .2em;
+        }
+    </style>
     <body>
-        <h1>Edit Company</h1>
+    <h1>Edit Company</h1>
         <form action="/company/update" method="get">
             <input
                     type="hidden"
@@ -18,7 +27,7 @@
                     value="<%= company.company_name %>"
             />
             <br />
-            Editress
+            Address
             <br />
             <% for(var i = 0; address_result.length > i; i++) {
                 var checked = "";
