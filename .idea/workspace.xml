@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce398c3f-c9b3-4643-91de-d02fe4a81733" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/account_dal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dal/account_dal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/address_dal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dal/address_dal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/company_dal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dal/company_dal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/resume_dal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dal/resume_dal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/school_dal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dal/school_dal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/skill_dal.js" beforeDir="false" afterPath="$PROJECT_DIR$/dal/skill_dal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/address.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/address.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/company.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/resume.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/resume.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/school.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/school.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/skill.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/skill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/account/account_view_all.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/account/account_view_all.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/address/address_view_all.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/address/address_view_all.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/company/CompanyUpdate.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/company/CompanyUpdate.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/company/company_view_all.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/company/company_view_all.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/resume/ResumeUpdate.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/resume/ResumeUpdate.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/resume/resume_add_detail.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/resume/resume_add_detail.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/resume/resume_add_selectuser.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/resume/resume_add_selectuser.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/resume/resume_view_all.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/resume/resume_view_all.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/school/school_view_all.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/school/school_view_all.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/skill/skill_view_all.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/skill/skill_view_all.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="ce398c3f-c9b3-4643-91de-d02fe4a81733" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -41,7 +17,7 @@
       <file leaf-file-name="address_dal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dal/address_dal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="553">
               <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
             </state>
           </provider>
@@ -60,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/dal/skill_dal.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -68,8 +44,8 @@
       <file leaf-file-name="company_dal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dal/company_dal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-end-line="43" />
+            <state relative-caret-position="630">
+              <caret line="42" column="31" selection-start-line="42" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -223,35 +199,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="Lab-12" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab-12" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab-13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab-13" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Lab-12" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab-12" type="462c0819:PsiDirectoryNode" />
-              <item name="dal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab-12" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab-12" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab-12" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab-12" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab-12" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab-12" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="school" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab-12" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab-12" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="skill" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab-13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab-13" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -308,15 +262,15 @@
       <updated>1526451945889</updated>
       <workItem from="1526451947001" duration="6480000" />
       <workItem from="1526506709842" duration="60107000" />
+      <workItem from="1526632263543" duration="277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66587000" />
+    <option name="totallyTimeSpent" value="66864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4969697" visible="true" weight="0.24947146" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -327,7 +281,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.5030303" side_tool="true" weight="0.24947146" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -345,6 +299,34 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dal/address_dal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/school_dal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/skill_dal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/company_dal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dal/resume_dal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
@@ -576,20 +558,20 @@
     <entry file="file://$PROJECT_DIR$/dal/skill_dal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dal/company_dal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-end-line="43" />
+        <state relative-caret-position="630">
+          <caret line="42" column="31" selection-start-line="42" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dal/address_dal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
+        <state relative-caret-position="553">
           <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
         </state>
       </provider>
